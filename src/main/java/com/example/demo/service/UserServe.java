@@ -32,4 +32,5 @@ public class UserServe  {
         res.list=list;
         return res;
     }
+
 }

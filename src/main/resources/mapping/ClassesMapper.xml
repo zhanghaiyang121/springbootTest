@@ -8,6 +8,6 @@
         <result column="realName" jdbcType="VARCHAR" property="realName" />
     </resultMap>
     <select id="Sel" resultType="com.example.demo.entity.Classes">
-        select * from user where id = #{id}
+        select * from classes where cid = #{id}
     </select>
 </mapper>
