@@ -4,7 +4,10 @@ import com.example.demo.entity.Classes;
 import com.example.demo.entity.User;
 import com.example.demo.service.ClassesServe;
 import com.example.demo.service.UserServe;
+import com.example.demo.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +25,9 @@ public class TestController {
 
 
     @RequestMapping("getUser/{id}")
-    public String GetUser(@PathVariable int id){
+    public User GetUser(@PathVariable int id){
         System.out.println(userService);
-        return userService.Sel(id).toString();
+        return userService.Sel(id);
     }
 
     @RequestMapping("del/{id}")
@@ -45,16 +48,16 @@ public class TestController {
 
 
     @RequestMapping("getclasses/{id}")
-    public String GetClasses(@PathVariable int id){
+    public Classes GetClasses(@PathVariable int id){
         System.out.println(classesServe);
-        return classesServe.Sel(id).toString();
+        return classesServe.Sel(id);
     }
 
     //查询年级信息和对应年级所有班级的信息
     @RequestMapping("getBanji/{id}")
-    public String getBanji(@PathVariable int id){
+    public Result getBanji(@PathVariable int id){
         System.out.println(userService);
-        return userService.SelBanji(id).toString();
+        return userService.SelBanji(id);
     }
 
     @RequestMapping("insertUser")

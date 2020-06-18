@@ -35,6 +35,7 @@ public class UserServe  {
         return res;
     }
 
+<<<<<<< HEAD
     public void insertUser(String name, String sex, String age, String userName, String passWord, String realName, int id){
         System.out.println(name);
         System.out.println(sex);
@@ -51,4 +52,6 @@ public class UserServe  {
     public void update(int uid, String name,String sex, String age){
         System.out.println(userMapper.update(uid,name,sex,age));
     }
+=======
+>>>>>>> 3d3d4f1343e32e416c0f7e751df898d29b8e416c
 }
