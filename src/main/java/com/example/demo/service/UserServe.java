@@ -19,7 +19,9 @@ public class UserServe  {
     public User Sel(int id){
         return userMapper.Sel(id);
     }
-
+    public int del(int id){
+        return userMapper.del(id);
+    }
     public List<Map<String,Object>> SelAll(){
         return userMapper.SelAll();
     }
@@ -31,5 +33,22 @@ public class UserServe  {
         res.user=user;
         res.list=list;
         return res;
+    }
+
+    public void insertUser(String name, String sex, String age, String userName, String passWord, String realName, int id){
+        System.out.println(name);
+        System.out.println(sex);
+        System.out.println(age);
+        System.out.println(userName);
+        System.out.println(passWord);
+        System.out.println(realName);
+        System.out.println(id);
+        int uid=3;
+
+        System.out.println(userMapper.insertUser(uid,name,sex,age,userName,passWord,realName,id));
+    }
+
+    public void update(int uid, String name,String sex, String age){
+        System.out.println(userMapper.update(uid,name,sex,age));
     }
 }

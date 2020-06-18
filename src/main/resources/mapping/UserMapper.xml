@@ -12,7 +12,7 @@
     </select>
 
     <select id="SelAll" resultType="hashMap">
-        select * from classes
+        select * from user
 <!--        SELECT *-->
 <!--        FROM user s-->
 <!--        INNER JOIN classes c-->
@@ -26,6 +26,29 @@
         <!--        INNER JOIN classes c-->
         <!--        ON s.id = c.nj-->
     </select>
+    <insert id="insertUser"  parameterType="com.example.demo.entity.User" >
+<!--        INSERT INTO user (uid,name,sex,age,userName,passWord,realName,id) VALUES (-->
+<!--        #{uid},-->
+<!--        #{name},-->
+<!--        #{sex},-->
+<!--        #{age},-->
+<!--        #{userName},-->
+<!--        #{passWord},-->
+<!--        #{realName},-->
+<!--        #{id})-->
+        INSERT INTO user (name,sex,age,userName,passWord,realName,id) VALUES (#{name},#{sex},#{age},#{userName},#{passWord},#{realName},#{id})
+    </insert>
 
+    <delete id="del">
+        delete from user where uid = #{id}
+    </delete>
+
+    <update id="update">
+        update user set
+        name = #{name},
+        sex = #{sex},
+        age = #{age}
+        where uid = #{uid}
+    </update>
 
 </mapper>

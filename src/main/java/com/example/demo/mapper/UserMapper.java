@@ -11,4 +11,7 @@ public interface UserMapper {
     User Sel(int id);
     List<Map<String,Object>> SelAll();
     List<Map<String,Object>> SelBanji(int id);
+    int insertUser(int uid,String name,String sex,String age,String userName,String passWord,String realName,int id);
+    int del(int id);
+    int update(int uid,String name,String sex,String age);
 }

@@ -27,6 +27,17 @@ public class TestController {
         return userService.Sel(id).toString();
     }
 
+    @RequestMapping("del/{id}")
+    public int del(@PathVariable int id){
+        System.out.println(userService);
+       return userService.del(id);
+    }
+
+    @RequestMapping("update")
+    public void del(int uid,String name,String sex,String age){
+        userService.update(uid,name,sex,age);
+    }
+
     @RequestMapping("getUsers")
     public List<Map<String,Object>> GetUsers(){
         return userService.SelAll();
@@ -44,5 +55,17 @@ public class TestController {
     public String getBanji(@PathVariable int id){
         System.out.println(userService);
         return userService.SelBanji(id).toString();
+    }
+
+    @RequestMapping("insertUser")
+    public void insertUser(String name,String sex,String age,String userName,String passWord,String realName,int id){
+        System.out.println(name);
+        System.out.println(sex);
+        System.out.println(age);
+        System.out.println(userName);
+        System.out.println(passWord);
+        System.out.println(realName);
+        System.out.println(id);
+         userService.insertUser(name,sex,age,userName,passWord,realName,id);
     }
 }
